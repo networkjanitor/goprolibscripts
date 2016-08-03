@@ -22,6 +22,7 @@ def single_night_photo():
 def single_night_multishot():
     h4.set_mode(gp_stats.App.mode.MULTISHOT, gp_stats.App.sub_mode.NIGHTLAPSE)
     h4.set_setting(gp_settings.Setup.lcd.OFF)
+    h4.set_setting(gp_settings.MultiShot.nightlapse_rate.CONTINUOUS)
     h4.set_setting(gp_settings.MultiShot.resolution.WIDE_12MP)
     h4.set_setting(gp_settings.MultiShot.exposure_time.AUTO)
     h4.set_setting(gp_settings.MultiShot.protune.ON)
@@ -32,7 +33,8 @@ def single_night_multishot():
     h4.set_setting(gp_settings.MultiShot.protune_white_balance.NATIVE)
     h4.shutter(True)
     time.sleep(10)
-    h4.shutter(False)
+    h4.shutter(True)
+    #h4.shutter(False)
 
 
 if __name__ == '__main__':
